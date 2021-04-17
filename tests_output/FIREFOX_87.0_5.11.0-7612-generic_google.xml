@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites errors="0"
+            failures="1"
+            tests="1">
+
+  <testsuite name="google"
+    errors="0" failures="1" hostname="" id="" package="google" skipped="0"
+    tests="1" time="9.257" timestamp="">
+  
+    <testcase name="Google advenceds search: Elon Musk" classname="google" time="9.257" assertions="6">
+
+    
+
+    
+
+    
+
+    
+
+      <failure message="UI: Last update set o past month in 5000ms - expected &#34;contains text &#39;No último mês&#39;&#34; but got: &#34;does not contain &#39;No último mês&#39;&#34; (5207ms)">    at Object.Google advenceds search: Elon Musk (/home/pp/Documents/NightWatch/entendendo/tests/google.js:39:20)
+    at processTicksAndRejections (internal/process/task_queues.js:93:5)</failure>
+
+    
+    </testcase>
+  
+
+  
+
+    
+
+  
+  </testsuite>
+</testsuites>
