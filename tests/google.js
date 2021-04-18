@@ -3,24 +3,19 @@ module.exports = {
   "Google advenceds search: Elon Musk"(browser) {
     const mainQuery = "Elon Musk";
 
-    const mainQueryInputSelector = 'input[name="as_q"]';
-    const languageDropdownOpenerSelector = "#lr_button";
-    const languageDropdownValueSelector = 'li[value="lang_pt"]';
-    const lasUpadtedDropdownOpenerSelector = "#as_qdr_button";
-    const lasUpadtedDropdownValueSelector = '.goog-menuitem[value="m"]';
-    const submitButtonSelector = '.jfk-button[type="submit"]';
+    const page = browser.page.googleAdvancedSearch();
 
     const resultPageQuerySelector = `#searchform input[name="q"][value="${mainQuery}"]`;
-    const topNav = '#top_nav';
+    const topNav = "#top_nav";
+
+    page
+      .navigate()
+      .setQuery(mainQuery)
+      .selectFilter("@languageDropdownOpener", "@languageDropdownValue")
+      .selectFilter("@lasUpadtedDropdownOpener", "@lasUpadtedDropdownValue")
+      .submit();
 
     browser
-      .url("https://www.google.com/advanced_search")
-      .setValue(mainQueryInputSelector, mainQuery)
-      .click(languageDropdownOpenerSelector)
-      .click(languageDropdownValueSelector)
-      .click(lasUpadtedDropdownOpenerSelector)
-      .click(lasUpadtedDropdownValueSelector)
-      .click(submitButtonSelector)
       .assert.urlContains("as_q=Elon+Musk", "Params: Query is Elon Musk")
       .assert.urlContains("lr=lang_pt", "Params: Language is Portuguese")
       .assert.urlContains("as_qdr=m", "Params: Time period is last month");
@@ -35,7 +30,7 @@ module.exports = {
       "Pesquisar páginas em Português",
       "UI: Language set to portuguese"
     );
-    
+
     browser.assert.containsText(
       topNav,
       "No último mês",
