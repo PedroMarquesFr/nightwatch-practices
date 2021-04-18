@@ -11,7 +11,7 @@ module.exports = {
     const submitButtonSelector = '.jfk-button[type="submit"]';
 
     const resultPageQuerySelector = `#searchform input[name="q"][value="${mainQuery}"]`;
-    const resultPageQLanguageSelector = ".KTBKoe";
+    const topNav = '#top_nav';
 
     browser
       .url("https://www.google.com/advanced_search")
@@ -31,13 +31,13 @@ module.exports = {
     );
 
     browser.assert.containsText(
-      ".KTBKoe",
+      topNav,
       "Pesquisar páginas em Português",
       "UI: Language set to portuguese"
     );
     
     browser.assert.containsText(
-      resultPageQLanguageSelector,
+      topNav,
       "No último mês",
       "UI: Last update set o past month"
     );
