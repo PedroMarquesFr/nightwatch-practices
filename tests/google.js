@@ -1,5 +1,6 @@
 module.exports = {
   "@tags": ["google"],
+  "@disabled": true,
   "Google advenceds search: Elon Musk"(browser) {
     const mainQuery = "Elon Musk";
 
@@ -14,7 +15,7 @@ module.exports = {
     const topNav = '#top_nav';
 
     browser
-      .url("https://www.google.com/advanced_search")
+      .url("https://www.google.com/advanced_search?hl=pt")
       .setValue(mainQueryInputSelector, mainQuery)
       .click(languageDropdownOpenerSelector)
       .click(languageDropdownValueSelector)
