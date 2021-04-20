@@ -1,4 +1,4 @@
-require("dotenv").config();
+// require("dotenv").config();
 
 module.exports = {
   src_folders: ["tests"],
@@ -7,7 +7,7 @@ module.exports = {
   webdriver: {
     start_process: true,
     server_path: require("chromedriver").path,
-    port: 4444,
+    port: 9515,
   },
 
   test_settings: {
